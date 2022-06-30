@@ -5,7 +5,7 @@ namespace WebApiBackend.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class UiModelController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
         {
@@ -14,12 +14,12 @@ namespace WebApiBackend.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public UiModelController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
+        [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
             return Enumerable.Range(1, 7).Select(index => new WeatherForecast
@@ -30,15 +30,15 @@ namespace WebApiBackend.Controllers
             })
             .ToArray();
         }
-        //[HttpGet(Name = "GetSampleUiModel")]
-        //public UiModel GetSampleUiModel(string type)
-        //{
-        //    switch (type.ToLower())
-        //    {
-        //        case "gridlist":
-        //            return NgGridList.Sample;
-        //    }
-        //    return null;
-        //}
+        [HttpGet(Name = "GetSampleModel")]
+        public UiModel GetSampleUiModel(string type)
+        {
+            switch (type.ToLower())
+            {
+                case "gridlist":
+                    return NgGridList.Sample;
+            }
+            return null;
+        }
     }
 }
