@@ -5,7 +5,9 @@ VisualStudioVersion = 17.1.32104.313
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "AngularFrontend", "AngularFrontend\AngularFrontend.esproj", "{C914A2E1-0912-476C-A527-C0AC8B2ED70F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiBackend", "WebApiBackend\WebApiBackend.csproj", "{5279E3E0-1E06-43E7-B4AD-44EFEDA84A90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiBackend", "WebApiBackend\WebApiBackend.csproj", "{5279E3E0-1E06-43E7-B4AD-44EFEDA84A90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalWebApi", "MinimalWebApi\MinimalWebApi.csproj", "{BDD8B36D-F544-4CBA-8C71-E3D3850EE073}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{5279E3E0-1E06-43E7-B4AD-44EFEDA84A90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5279E3E0-1E06-43E7-B4AD-44EFEDA84A90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5279E3E0-1E06-43E7-B4AD-44EFEDA84A90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDD8B36D-F544-4CBA-8C71-E3D3850EE073}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDD8B36D-F544-4CBA-8C71-E3D3850EE073}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDD8B36D-F544-4CBA-8C71-E3D3850EE073}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDD8B36D-F544-4CBA-8C71-E3D3850EE073}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
