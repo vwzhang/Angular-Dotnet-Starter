@@ -1,26 +1,21 @@
-<app-ad-banner></app-ad-banner>
-<h1 id="tableLabel">Weather forecast</h1>
+<mat-toolbar color="primary">
+    <button mat-icon-button aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>Angular Api Solution Starter</span>
+    <div>
+        <a mat-button [routerLink]="'/about'"> About </a>
+        <a mat-button [routerLink]="'/test'"> Test Module </a>
+        <a mat-button [routerLink]="'/todo-list'"> Todo Module </a>
+        <a mat-button [routerLink]="'/dev'"> Dev Component </a>
+    </div>
+    <span class="example-spacer"></span>
+    <button mat-icon-button aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+    </button>
+</mat-toolbar>
+<router-outlet></router-outlet>
 
-<p>This component demonstrates fetching data from the server.</p>
-
-<p *ngIf="!forecasts"><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
-
-<table *ngIf="forecasts">
-    <thead>
-        <tr>
-            <th>Date</th>
-            <th>Temp. (C)</th>
-            <th>Temp. (F)</th>
-            <th>Summary</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let forecast of forecasts">
-            <td>{{ forecast.date }}</td>
-            <td>{{ forecast.temperatureC }}</td>
-            <td>{{ forecast.temperatureF }}</td>
-            <td>{{ forecast.summary }}</td>
-        </tr>
-    </tbody>
-</table>
-<button mat-button>Material Button</button>

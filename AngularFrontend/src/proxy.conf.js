@@ -5,6 +5,13 @@ const PROXY_CONFIG = [
     ],
     target: "https://localhost:7257",
     secure: false
+  },
+  {
+    context: [
+      '/typedResults',
+    ],
+    target: "https://localhost:7104",
+    secure: false
   }
 ]
 

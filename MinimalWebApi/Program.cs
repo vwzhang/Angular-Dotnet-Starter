@@ -3,9 +3,34 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<TodoDb>(opt => opt.UseInMemoryDatabase("TodoList"));
+builder.Services.AddTransient<DbInitializer>();
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy(name: "_MyAllowSpecificOrigins",
+//        policy =>
+//        {
+//            policy.WithOrigins("https://localhost:4200");
+//        });
+//});
+
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+//app.UseHttpsRedirection();
+
+using var scope = app.Services.CreateScope();
+scope.ServiceProvider.GetRequiredService<DbInitializer>().Run();
 
 app.MapGet("/", () => "Hello World!");
 
@@ -63,7 +88,7 @@ typedResults.MapGet("/", GetAllItems);
 typedResults.MapGet("/complete", GetCompletedItems);
 typedResults.MapGet("/{id}", SelectItem);
 typedResults.MapPost("/", CreateItem);
-typedResults.MapPut("/{id|", UpdateItem);
+typedResults.MapPut("/{id}", UpdateItem);
 typedResults.MapDelete("/{id}", RemoveItem);
 
 app.Run();
@@ -72,7 +97,13 @@ static async Task<IResult> GetAllItems(TodoDb db) => TypedResults.Ok(await db.To
 
 static async Task<IResult> GetCompletedItems(TodoDb db) => TypedResults.Ok(await db.Todos.Where(t => t.IsComplete).ToArrayAsync());
 
-static async Task<IResult> SelectItem(int id, TodoDb db) => await db.Todos.FindAsync(id) is Todo item ? TypedResults.Ok(item) : TypedResults.NotFound();
+static async Task<IResult> SelectItem(int id, TodoDb db) {
+    var item = await db.Todos.FindAsync(id);
+    if (item is Todo)
+        return TypedResults.Ok(item);
+    else
+        return TypedResults.NotFound();
+}
 
 static async Task<IResult> CreateItem(Todo item, TodoDb db)
 {

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdDirective } from './ad.directive';
 import { AdBannerComponent } from './ad-banner/ad-banner.component';
+import { MaterialModule } from '../../../material.module';
 
 
 
@@ -11,7 +12,7 @@ import { AdBannerComponent } from './ad-banner/ad-banner.component';
     AdBannerComponent
   ],
   imports: [
-    CommonModule
+    CommonModule, MaterialModule
   ],
   exports: [
     AdBannerComponent
