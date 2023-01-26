@@ -20,8 +20,9 @@ import { FormsModule } from '@angular/forms';
     DevelopmentComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule, BrowserAnimationsModule, FormsModule, MaterialModule, TestModule, DevModule,
-    TodoListModule,
+    BrowserModule, HttpClientModule, BrowserAnimationsModule, FormsModule,
+    MaterialModule,
+    TestModule, DevModule, TodoListModule,
     AppRoutingModule
   ],
   providers: [],
