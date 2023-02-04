@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AboutComponent } from './about/about.component';
 import { DevelopmentComponent } from './development/development.component';
 import { FormsModule } from '@angular/forms';
+import { DynamicComponentsModule } from './modules/dynamic-components/dynamic-components.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule, HttpClientModule, BrowserAnimationsModule, FormsModule, MaterialModule, TestModule, DevModule,
     TodoListModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DynamicComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

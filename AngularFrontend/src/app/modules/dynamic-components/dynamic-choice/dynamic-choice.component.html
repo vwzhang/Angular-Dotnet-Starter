@@ -1,0 +1,9 @@
+<p>dynamic-choice works!</p>
+<mat-form-field>
+  <label>{{field.label}}:</label>
+  <select *ngSwitchCase="'select'" [formControlName="field.fieldName">
+    <option *ngFor="let option of field.options" [value]="option.value">
+      {{option.label}}
+    </option>
+  </select>
+</mat-form-field>
