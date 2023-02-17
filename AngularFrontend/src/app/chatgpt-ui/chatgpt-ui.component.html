@@ -1,0 +1,15 @@
+<p>chatgpt-ui works!</p>
+<p>
+    <mat-form-field appearance="fill">
+        <mat-label>Prompt</mat-label>
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+</p>
+<p>
+    <mat-form-field appearance="outline">
+        <mat-label>Output</mat-label>
+        <textarea matInput cols="35" rows="8" placeholder="Chat GPT output" [(ngModel)]="chatGPTresponse"></textarea>
+    </mat-form-field>
+</p>
+<button matButton (click)="sendMessage()">Send</button>

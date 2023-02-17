@@ -12,12 +12,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AboutComponent } from './about/about.component';
 import { DevelopmentComponent } from './development/development.component';
 import { FormsModule } from '@angular/forms';
+import { ChatgptUiComponent } from './chatgpt-ui/chatgpt-ui.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
-    DevelopmentComponent
+    DevelopmentComponent,
+    ChatgptUiComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, BrowserAnimationsModule, FormsModule,
