@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { WeatherService, WeatherForecast } from '../weather.service';
 
 @Component({
   selector: 'app-test',
@@ -10,17 +11,10 @@ export class TestComponent {
   public forecasts?: WeatherForecast[];
   public model?: any;
 
-  constructor(http: HttpClient) {
-    http.get<WeatherForecast[]>('/weatherforecast').subscribe(result => {
+  constructor(http: HttpClient, service: WeatherService) {
+    service.get().subscribe(result => {
       this.forecasts = result;
-    }, error => console.error(error));
+    });
   }
-}
-
-interface WeatherForecast {
-  date: string;
-  temperatureC: number;
-  temperatureF: number;
-  summary: string;
 }
 

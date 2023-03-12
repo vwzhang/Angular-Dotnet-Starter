@@ -1,0 +1,8 @@
+<p>material-input works!</p>
+<mat-form-field *ngFor="let item of uiTypes">
+    <mat-label>{{item}}</mat-label><br />
+    <input matInput [type]="item" placeholder="something"  />
+    <br />
+    <mat-hint></mat-hint>
+    <br />
+</mat-form-field>
