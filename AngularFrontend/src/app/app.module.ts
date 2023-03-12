@@ -13,13 +13,15 @@ import { AboutComponent } from './about/about.component';
 import { DevelopmentComponent } from './development/development.component';
 import { FormsModule } from '@angular/forms';
 import { ChatgptUiComponent } from './chatgpt-ui/chatgpt-ui.component';
+import { AppShellComponent } from './app-shell/app-shell.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
     DevelopmentComponent,
-    ChatgptUiComponent
+    ChatgptUiComponent,
+    AppShellComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, BrowserAnimationsModule, FormsModule,

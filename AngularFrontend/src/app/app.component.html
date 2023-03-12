@@ -1,22 +1,31 @@
 <mat-toolbar color="primary">
+  <mat-toolbar-row>
     <button mat-icon-button aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
+      <mat-icon>menu</mat-icon>
     </button>
     <span>Angular Api Solution Starter</span>
     <div>
-        <a mat-button [routerLink]="'/about'"> About </a>
-        <a mat-button [routerLink]="'/test'"> Test Module </a>
-        <a mat-button [routerLink]="'/todo-list'"> Todo Module </a>
-        <a mat-button [routerLink]="'/dev'"> Dev Component </a>
+      <a mat-button [routerLink]="'/about'"> About </a>
+      <a mat-button [routerLink]="'/test'"> Test Module </a>
+      <a mat-button [routerLink]="'/todo-list'"> Todo Module </a>
+      <a mat-button [routerLink]="'/dev'"> Dev Component </a>
     </div>
     <span class="example-spacer"></span>
     <button mat-icon-button aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
+      <mat-icon>favorite</mat-icon>
     </button>
     <button mat-icon-button aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
+      <mat-icon>share</mat-icon>
     </button>
+  </mat-toolbar-row>
 </mat-toolbar>
-<router-outlet></router-outlet>
-<app-chatgpt-ui></app-chatgpt-ui>
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened class="sidenav">
 
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<app-chatgpt-ui></app-chatgpt-ui>
+<app-shell style="position: relative; position: sticky; bottom: 0;"></app-shell>
