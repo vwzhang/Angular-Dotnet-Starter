@@ -1,6 +1,5 @@
 using MinimalWebApi.Models;
 using Microsoft.EntityFrameworkCore;
-using MinimalWebApi;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<TodoDb>(opt => opt.UseInMemoryDatabase("TodoList"));
@@ -30,11 +29,8 @@ if (app.Environment.IsDevelopment())
 
 //app.UseHttpsRedirection();
 
-//using (var scope = app.Services.CreateScope())
-//{
-//    scope.ServiceProvider.GetRequiredService<TodoApi>().RegisterApis(app);
-//    scope.ServiceProvider.GetRequiredService<DbInitializer>().Run();
-//}
+using var scope = app.Services.CreateScope();
+scope.ServiceProvider.GetRequiredService<DbInitializer>().Run();
 
 app.MapGet("/", () => "Hello World!");
 

@@ -1,0 +1,21 @@
+<div class="container">
+    <h1>View Post</h1>
+
+    <a href="#" routerLink="/todo-list/index" class="btn btn-primary">Back</a>
+
+    <div>
+        <strong>ID:</strong>
+        <p>{{ todo.id }}</p>
+    </div>
+
+    <div>
+        <strong>Title:</strong>
+        <input [ngModel]="todo.name" readonly/>
+    </div>
+
+    <div>
+        <strong>Is Complete:</strong>
+        <input type="checkbox" [checked]="todo.isComplete" disabled />
+    </div>
+
+</div>
