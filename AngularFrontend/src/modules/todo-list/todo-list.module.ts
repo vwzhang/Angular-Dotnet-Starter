@@ -5,7 +5,7 @@ import { IndexComponent } from './index/index.component';
 import { ViewComponent } from './view/view.component';
 import { AddComponent } from './add/add.component';
 import { EditComponent } from './edit/edit.component';
-import { MaterialModule } from '../../../material.module';
+import { MaterialModule } from '../../material.module';
 import { TodoListRoutingModule } from './todo-list-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 

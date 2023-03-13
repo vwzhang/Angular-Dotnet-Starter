@@ -7,9 +7,9 @@ import { DevelopmentComponent } from './development/development.component';
 const routes: Routes = [
   { path: '', redirectTo: '/about-component', pathMatch: 'full' },
   { path: 'about', component: AboutComponent },
-  { path: 'todo-list', loadChildren: () => import('./modules/todo-list/todo-list.module').then(m => m.TodoListModule) },
+  { path: 'todo-list', loadChildren: () => import('../modules/todo-list/todo-list.module').then(m => m.TodoListModule) },
   { path: 'dev', component: DevelopmentComponent },
-  { path: 'test', loadChildren: () => import('./modules/test/test.module').then(m => m.TestModule) }
+  { path: 'test', loadChildren: () => import('../modules/test/test.module').then(m => m.TestModule) }
 ];
 
 @NgModule({

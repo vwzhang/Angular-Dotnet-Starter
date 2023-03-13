@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MaterialModule } from '../../../material.module';
+import { MaterialModule } from '../../material.module';
 import { DynamicChoiceComponent } from './dynamic-choice/dynamic-choice.component';
 import { DynamicInputComponent } from './dynamic-input/dynamic-input.component';
 import { DynamicFieldComponent } from './dynamic-field/dynamic-field.component';
