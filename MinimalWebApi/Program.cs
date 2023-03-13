@@ -30,6 +30,8 @@ if (app.Environment.IsDevelopment())
 
 //app.UseHttpsRedirection();
 
+using var scope = app.Services.CreateScope();
+scope.ServiceProvider.GetRequiredService<DbInitializer>().Run();
 
 app.MapGet("/", () => "Hello World!");
 
