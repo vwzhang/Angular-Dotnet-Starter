@@ -13,6 +13,7 @@ import { AboutComponent } from './about/about.component';
 import { DevelopmentComponent } from './development/development.component';
 import { FormsModule } from '@angular/forms';
 import { DynamicComponentsModule } from '../modules/dynamic-components/dynamic-components.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -21,8 +22,9 @@ import { DynamicComponentsModule } from '../modules/dynamic-components/dynamic-c
     DevelopmentComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule, BrowserAnimationsModule, FormsModule, MaterialModule, TestModule, DevModule,
-    TodoListModule,
+    BrowserModule, HttpClientModule, BrowserAnimationsModule, FormsModule,
+    MaterialModule, FlexLayoutModule,
+    TestModule, DevModule, TodoListModule,
     AppRoutingModule,
     DynamicComponentsModule
   ],

@@ -8,6 +8,7 @@ import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { TestComponent } from './test/test.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DynamicShellComponent } from './dynamic-shell/dynamic-shell.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
@@ -21,7 +22,7 @@ import { DynamicShellComponent } from './dynamic-shell/dynamic-shell.component';
     DynamicShellComponent,
   ],
   imports: [
-    CommonModule, MaterialModule, ReactiveFormsModule
+    CommonModule, MaterialModule, ReactiveFormsModule, FlexLayoutModule
   ],
   exports: [
     TestComponent, DynamicShellComponent
