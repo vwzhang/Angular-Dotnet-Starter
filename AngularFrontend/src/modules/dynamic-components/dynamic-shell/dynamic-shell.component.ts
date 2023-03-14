@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./dynamic-shell.component.css']
 })
 export class DynamicShellComponent {
-
+  navList: string[] = [ "Homw", "View", "About"];
 }
