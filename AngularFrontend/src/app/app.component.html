@@ -1,5 +1,9 @@
 <app-dynamic-shell></app-dynamic-shell>
-<br/>
+<button mat-button (click)="loadWidgetOne()">Widget One</button>
+<button mat-button (click)="loadWidgetTwo()">Widget Two</button>
+
+<app-dynamic-container [componentDef]="componentDef"></app-dynamic-container>
+<br />
 <mat-toolbar color="primary">
     <button mat-icon-button aria-label="Example icon-button with menu icon">
         <mat-icon>menu</mat-icon>

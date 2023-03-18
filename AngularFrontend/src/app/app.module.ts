@@ -14,12 +14,18 @@ import { DevelopmentComponent } from './development/development.component';
 import { FormsModule } from '@angular/forms';
 import { DynamicComponentsModule } from '../modules/dynamic-components/dynamic-components.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { DynamicContainerComponent } from './dynamic-container/dynamic-container.component';
+import { WidgetOneComponent } from './widget-one/widget-one.component';
+import { WidgetTwoComponent } from './widget-two/widget-two.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
-    DevelopmentComponent
+    DevelopmentComponent,
+    DynamicContainerComponent,
+    WidgetOneComponent,
+    WidgetTwoComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, BrowserAnimationsModule, FormsModule,
